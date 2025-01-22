@@ -4,14 +4,7 @@
 
 ## Overview
 
-This solution generates upsell and cross-sell recommendations to increase sales for the Tasty Bytes business. This involves:
-
-- Extracting features from customer, menu, and purchase history.
-- Preprocessing data using the Snowpark ML library.
-- Training a PyTorch DLRM model with distributed processing on GPUs.
-- Registering the model and deploying it to a container runtime environment.
-- Running predictions and visualizing recommendations on Streamlit.
-- Displaying personalized menu item recommendations along with purchase history in a Streamlit app.
+This solution utilizes cell tower data, support ticket call transcripts, and customer loyalty insights to optimize network operations with Cortex AI. It helps network teams prioritize which cell towers to address when resolving issues and includes a Cortex Analyst chatbot for querying and interacting with the network data.
 
 ## Step-By-Step Guide
 
