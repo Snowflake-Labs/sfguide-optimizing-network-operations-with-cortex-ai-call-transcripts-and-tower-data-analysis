@@ -1,4 +1,4 @@
-ALTER SESSION SET query_tag = '{"origin":"sf_sit-is","name":"telco_opt_nw_ops","version":{"major":1, "minor":0},"attributes":{"is_quickstart":1, "source":"sql"}}';
+ALTER SESSION SET query_tag = '{"origin":"sf_sit-is","name":"telco_opt_nw_ops","version":{"major":1, "minor":0},"attributes":{"is_quickstart":0, "source":"sql"}}';
 
 -- Switch to ACCOUNTADMIN role
 USE ROLE ACCOUNTADMIN;
@@ -31,7 +31,7 @@ CREATE SCHEMA TELCO_NETWORK_OPTIMIZATION_PROD.RAW;
 -- Create or replace a CSV file format in the RAW_POS schema
 CREATE OR REPLACE FILE FORMAT TELCO_NETWORK_OPTIMIZATION_PROD.RAW.CSV_TELCO_NW_OPT
     TYPE = 'csv'
-    NULL_IF = ('NULL', 'null', '')
+    NULL_IF = ('NULL', 'null', '', '\N', '\\N')
     FIELD_OPTIONALLY_ENCLOSED_BY = '"'
     SKIP_HEADER = 1; 
 
