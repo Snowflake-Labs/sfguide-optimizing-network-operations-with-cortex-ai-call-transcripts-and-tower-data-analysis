@@ -7,7 +7,12 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 secrets = st.secrets["snowflake"]
-session = Session.builder.configs(secrets).create()
+
+@st.cache_resource
+def get_database_session():
+    return Session.builder.configs(secrets).create()
+
+session = get_database_session()
 
 st.markdown("## Cell Tower Performance: Failure and Success Rate Analysis")
 
